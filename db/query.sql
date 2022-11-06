@@ -1,0 +1,14 @@
+-- SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name, role.salary, employee.manager_id, manager.*
+-- FROM employee, role, department
+-- INNER JOIN employee manager
+-- ON employee.manager_id = manager.id
+-- WHERE employee.role_id = role.id 
+-- AND role.department_id = department.id;
+-- AND employee.manager_id = employee.id;
+
+-- SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name as department, role.salary, concat(manager.first_name, " ", manager.last_name) as manager
+-- FROM role, department, employee
+-- INNER JOIN (SELECT id, first_name, last_name FROM employee where manager_id IS NULL) as manager
+-- WHERE employee.role_id = role.id
+-- AND role.department_id = department.id
+-- AND manager.id = employee.manager_id;
